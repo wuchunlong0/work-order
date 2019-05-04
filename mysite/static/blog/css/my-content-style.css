@@ -1,0 +1,102 @@
+
+.myrow {
+	width:100%;
+	max-width:1200px;
+	min-width:755px;
+	margin:0 auto;
+	overflow:hidden
+}
+.mycol,.eightcol,.elevencol,.fifteencol,.fivecol,.fourcol,.fourteencol,.ninecol,.onecol,.sevencol,.sixcol,.tencol,.thirteencol,.threecol,.twelvecol,.twocol {
+	margin-right:1%;
+	float:left
+}
+
+
+.mymiddle-column-home {
+	margin-top:15px;
+	width:80%;
+	margin-left: 26px;
+	padding:12px 20px;
+	border:1px solid #eaeaea;
+	background-color:#fff;
+	border-radius:4px
+}
+
+.mycodelist {
+	overflow:hidden
+}
+.mycodelist-mobile {
+	display:none
+}
+.mycodelist a {
+	width:72px;
+	margin:0 5px 8px 5px;
+	float:left;
+	text-align:center;
+	color:#999;
+	font-size:12px;
+	height:65px;
+	overflow:hidden;
+	text-decoration:none
+}
+.mycodelist a:hover {
+	color:#64854c
+}
+.mycodelist .mycodeicon {
+	border-radius:5px;
+	margin:0 auto;
+	display:block;
+	margin-bottom:5px
+}
+.mycodelist a.myitem-top {
+	width:24%;
+	margin:0 8px 10px 0;
+	text-align:left;
+	height:80px;
+	color:#bbb;
+	background-color:#f6f6f6;
+	border-radius:5px;
+	padding:6px 16px
+}
+.mycodelist a.myitem-top .mycodeicon {
+	float:left;
+	margin-left:10px;
+	margin-right:10px
+}
+.mycodelist a.myitem-top h4 {
+	color:#64854c;
+	font-size:16px;
+	margin-top:10px;
+	margin-bottom:10px;
+	line-height:1.1;
+	text-align:left
+}
+
+/*.tab {
+    margin-top:12px;
+    opacity: .7;
+    padding - left: 4px;
+    font - weight: 400;
+    display: block;
+    font - size: 1.2em;
+    line - height: 1.9em;
+    font - family: proxima - nova,
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    sans - serif;
+    color: grey;
+    text - shadow: 0 1px 0 rgba(255, 255, 255, .15);
+    border: 1px solid rgba(0, 0, 0, .1);
+    border - bottom: 0; - moz - border - top - left - radius: 3px; - webkit - border - top - left - radius: 3px;
+    border - top - left - radius: 3px; - moz - border - top - right - radius: 3px; - webkit - border - top - right - radius: 3px;
+    border - top - right - radius: 3px; - moz - background - clip: padding; - webkit - background - clip: padding - box;
+    background - clip: padding - box;
+    background - color: #f2f2f2;
+    background - image: url(data: image / svg + xml; base64, PD94bWwgdmVyc2lvbj0iMS4wIiA / Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMTclIiB4Mj0iNTAlIiB5Mj0iLTE3JSI + CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDAiIHN0b3Atb3BhY2l0eT0iMC4wNSIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMC4wNSIvPgogICA8L2xpbmVhckdyYWRpZW50PgoKPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjaGF0MCkiIC8 + Cjwvc3ZnPg == );
+    background - image: -moz - linear - gradient(bottom, rgba(0, 0, 0, .05) - 17 % , rgba(255, 255, 255, .05) 117 % );
+    background - image: -o - linear - gradient(bottom, rgba(0, 0, 0, .05) - 17 % , rgba(255, 255, 255, .05) 117 % );
+    background - image: -webkit - linear - gradient(bottom, rgba(0, 0, 0, .05) - 17 % , rgba(255, 255, 255, .05) 117 % );
+    background - image: linear - gradient(bottom, rgba(0, 0, 0, .05) - 17 % , rgba(255, 255, 255, .05) 117 % )
+}
+*/

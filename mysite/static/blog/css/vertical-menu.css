@@ -1,0 +1,34 @@
+
+/*自定义垂直菜单 与vertical-menu.js 配合使用  吴春龙 2018.11.21 */
+.square{
+    width:196px; 
+    border:1px #ccc solid;  /*矩形边框*/
+}
+.vertical-menu {
+    width: 192px;
+    word-wrap:break-word;
+    padding-left:2px;
+    padding-top:2px;    
+  
+}
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    border:1px #ccc solid; 
+    border-radius: 5px;  /* 圆角 */
+   
+}
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+.vertical-menu a:focus  {
+    background-color: #4CAF50;
+    color: white;
+}
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
