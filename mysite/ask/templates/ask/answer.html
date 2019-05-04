@@ -1,0 +1,179 @@
+{% extends 'blog/__base__.html' %}
+
+{% block script %}     
+    <link rel="stylesheet" href="/static/blog/ask/css/simditor.css"/>  
+    <link rel="stylesheet" href="/static/blog/ask/css/common.css" >
+    <link rel="stylesheet" href="/static/blog/ask/css/ques.css">
+    <!--编辑器插件-->       
+        <script src="/static/blog/ask/js/module.js"></script>
+        <script src="/static/blog/ask/js/hotkeys.js"></script>
+        <script src="/static/blog/ask/js/simditor.js"></script>
+        <script src="/static/blog/ask/js/editor_answer.js"></script><!--可以更改编辑器提示信息-->
+        <script src="/static/blog/ask/js/ques.common.js"></script>
+        <!--end 编辑器插件-->
+{% endblock  %}  
+
+{% block content %}
+    
+<div class="container" >
+    <div class="wrapper">
+
+        <!-- container -->
+        <section class="container cf" style="width:1040px;">
+            <!-- main -->
+            <div id="main" >
+
+                <!-- askcont -->
+                <div class="askcont" >
+                    <div class="wrap" id="ask" aid='26076'>
+                        {% for Technologydict in ask_list %}
+                        <div class="askhead cf">
+                            <span class="headpic">
+						    <a href="#" target="_blank">
+                                <img src="http://assets.jikexueyuan.com/user/avtar/avatar_2594875.jpg" alt="">
+                            </a>
+                            </span>
+                            <div class="tit">
+                            
+                                <h3>标题：{{Technologydict.titleask }}</h3>
+
+                                <p>
+                                    <span>
+							         <a href="#" target="_blank">
+                                        {{ user.username }} <!--登录用户-->
+                                     </a>
+                                    </span> &sdot;
+                                    <span><a href="#" target="_blank">HTML5特性简介</a></span> &sdot;
+							         {{Technologydict.date | date:"Y-m-d H:i:s"}}
+
+                                </p>
+                            </div>
+
+                            <ul>
+                            <ul class="count">
+                                <li class={{ ques.0.askstatus }}>
+                                    <span id="numSwitch">{{Technologydict.answernumber }}</span>
+                                        回答
+                                </li>
+                                
+                            </ul>
+                            <ul class="count">
+                                
+                                <li >
+                                    <span>{{Technologydict.browsernumber }}</span>
+                                        浏览
+                                </li>
+                            </ul>
+
+                            <ul>
+
+                        </div><!-- /askhead -->
+
+                        <div class="details">
+                           
+                                内容：
+                                <h3> {{Technologydict.editor|safe}}</h3>
+                           
+                        </div>
+                    {% endfor %}
+                    </div><!-- /wrap -->
+                </div><!-- /askcont -->
+
+                <!-- reolylist -->
+                <div class="replylist">
+                    {% for questionAsk in answer_list %}
+
+                        <div class="wrap cf" rid = "22797" id="reply2">
+                            <div class="headpic">
+                                <a href="#" >
+                                <img src="/static/blog/images/default.gif" alt="">
+                                </a>
+                            </div>
+                            <ul class="desc">
+                                <li class="hint cf">
+                                    <span class="userNick">
+                                        <a href="#" >
+                                            {{  user.username}}
+                                        </a>
+                                    </span>
+                                        {{ questionAsk.date|date:"Y-m-d H:i:s"}} 回答
+                                    <span class="floor">
+                                        <a href="#reply2">
+                                            {{forloop.counter}} 楼
+                                        </a>
+                                    </span>
+                                </li>
+                                <li class="cont">
+                                    <div class="contEdit">
+                                        <p>
+                                        
+                                            {{ questionAsk.editor|safe}}
+                                        
+                                        <br>
+
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div><!-- /wrap -->
+                    {% endfor %}
+                </div> <!-- /replylist -->     
+          
+                <div style="margin-left:300px;">
+                 {% include 'blog/djangopage.html' %}
+                </div>
+
+
+
+
+                <!--editor-->
+                <form action="#" name="editor_form" id="editor_form" class="   diaLoginBtn"   method="post">
+                    {% csrf_token %}
+                    <input type='text' name='titleask' value="{{titleask}}" style="display:none" >
+                    <div class="editor" id="editorBox" >
+
+                        <textarea name="editor" id="editor"  ng-model="editor" required  ></textarea>
+                           
+                        <input class="btn btn-def xl w-lg"  type="submit" value="提交" style="float:right ">
+
+                    </div>
+
+                </form> <!-- /editor -->               
+            </div> <!-- /main -->
+ 
+            <!-- sidebar -->
+            <div id="sidebar" >
+                <!--所属课程-->
+                <div class="course-view" title="HTML5特性简介" >
+                    <h2>所属课程</h2>
+                    <a href="#" target="_blank">
+                        <img src="/static/blog/ask/img/53bdf15c29478.jpg" alt=""/>
+                        <div class="btn">
+                            <img src="/static/blog/ask/img/player.png" alt=""/>
+                        </div>
+					   <span class="mask-help">
+
+					   </span>
+                        <p>HTML5特性简介</p>
+                    </a>
+                </div>
+
+                <!--近期热议-->
+                <div class="hot-que detail-r1" >
+                    <h2>近期热议问题</h2>
+                    <div style="margin-left:-40px">
+
+                    {% include 'blog/home/question_answer.html' %} 
+                    </div>
+                </div>
+            </div> <!-- /sidebar -->
+        </section>
+           
+    </div> <!-- /wrapper -->
+</div><!-- /container -->
+
+<!--page-->
+</br>
+
+
+{% endblock %}

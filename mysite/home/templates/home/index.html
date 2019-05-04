@@ -1,0 +1,52 @@
+{% extends 'home/__base__.html' %}
+{% block head %}
+
+<link rel="stylesheet" href="/static/blog/css/my-content-style.css" type="text/css" media="all"> 
+<link rel="stylesheet" href="/static/blog/css/my-left-menu.css" type="text/css" media="all">
+<script src="/static/blog/js/main.js"></script>
+<script src="/static/blog/js/jQuery-main.js"></script>
+{% endblock %} 
+
+{% block content %} 
+<div class="container"> 
+    <div class="col-md-12 column"> 
+        <div class="col-md-2">                    
+            <div class="myrow">
+                <div class="mycol">
+                    <div class="tab">目 录</div>                    
+                    <div class="mydesign" id="leftcolumn">
+                       {% include 'home/left-menu.html' %}        
+                    </div>             
+                </div>
+            </div>              
+        </div> 
+
+            <div class="col-md-10 mymiddle-column-home">
+                <div class="mycodelist">                       
+                    <h2> HTML / CSS / JavaScript/ Python / Django </h2> 
+                    <div>     
+                        <a class="myitem-top" href="/blog/index/"><h4>【 Python / Django 】</h4>
+                        <strong>按钮效果，功能全面.</strong></a>     
+                    </div>                
+                    <div>     
+                        <a class="myitem-top" href="#"><h4>【 HTML 】</h4>
+                        <strong>按钮效果，功能全面.</strong></a>     
+                    </div>                
+                    <div>     
+                        <a class="myitem-top" href="#"><h4>【 CSS 】</h4>
+                        <strong>按钮效果，功能全面.</strong></a>     
+                    </div>                
+                    <div>     
+                        <a class="myitem-top" href="#"><h4>【  JavaScript 】</h4>
+                        <strong>按钮效果，功能全面.</strong></a>     
+                    </div>                                
+      
+                </div>             
+            </div>   
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

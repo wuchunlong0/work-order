@@ -1,0 +1,167 @@
+{% extends 'home/__base__.html' %}
+{% block content %}
+
+  <script src="/static/blog/home/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/static/blog/ask/css/common.min.css" >
+  <link rel="stylesheet" href="/static/blog/ask/css/common.css" >
+  <link rel="stylesheet" href="/static/blog/ask/css/ques.css">
+    
+<div class="wrapper">
+  <div id="container">
+    <div class="wrap aside-right">
+      <!-- main -->
+      <div id="main">
+        <!-- qsort -->
+        <div class="qsort">
+          <div class="wrap">
+
+            <div class="qsort-mode">
+              <form  action="#" method="post" name="qform" id="qform">
+                
+                {% csrf_token %}
+                <!--调用标签模块-->
+                
+                {% include 'blog/tag.html' %}
+                <input type="text" name ="titleask" value="{{titleask}}" style="width: 200px; color:#000;font-size:16px;" class="btn" placeholder="按标题搜索...">
+
+
+                <input type="submit" class="btn btn-def" id="commentB" value="搜索" style="margin-left: 28px; margin-top:1px; font-size:14px;"/>
+              </form>
+            </div>
+
+            <div class="qsort-see">
+              <dl>
+                <dt>查看：</dt>
+                <dd><a class="default" href="#">默认</a></dd> /
+                <dd><a class="good" rel="nofollow" href="#">
+                <i class="icon-diamond"></i>问答精华</a>
+                </dd> /
+                <dd><a class="new" rel="nofollow" href="/ask/noanswer/">待回复</a></dd> /
+                <dd><a class="new" rel="nofollow" href="/ask/list/">全部提问</a></dd>
+              </dl>
+            </div>
+          </div><!-- /wrap -->
+        </div><!-- /qsort -->
+
+        
+        <!-- queslist -->
+        <div class="asklist">
+
+          {% for TechnologyAsk in ask_list %}
+          <!--数据库 对象 置顶 循环-->
+          
+      
+          <ul class="cf">
+            <li class="askstatus">
+
+                <a href="#" class="{{TechnologyAsk.askstatus }}" >
+                    <strong>
+                        {{ TechnologyAsk.answernumber }}
+                    </strong>
+                    <p>回答</p>
+                </a>
+            </li>
+            <li class="askpv">
+                <div>
+                    <strong>
+                        {{ TechnologyAsk.browsernumber }}
+                    </strong>
+                    <p>浏览</p>
+                </div>
+            </li>
+            <li class="asktit">
+                <p class="caption cf">
+
+                <h3><a href='/ask/answer/?titleask={{TechnologyAsk.titleask}}' > <span style="color:#ccc">标题:&nbsp;&nbsp;</span>{{TechnologyAsk.title}} </a> </h3>
+
+                
+                {% if TechnologyAsk.setop == 'setop' %} 
+                   <span class="{{TechnologyAsk.setop}}">置顶</span>
+                {% endif %}              
+
+                </p>
+
+                <p class="mark">		             
+                  <span>
+                        {{user.username}} <!--登录用户名-->
+                    <a href="#">{{ TechnologyAsk.tag }} </a>
+                  </span>
+                  &middot; {{ TechnologyAsk.date|date:"Y-m-d H:i:s"}}                                    
+                                 
+              </p>
+
+
+
+
+            </li>
+
+
+
+          </ul>
+
+          <div> <p><span style="color:#ccc">内容:&nbsp;&nbsp;</span>{{TechnologyAsk.edit|safe }}</p>
+                
+          <hr></hr> <!-- 一条横线 --></div>
+
+          {% endfor %}
+        </div> <!-- /queslist -->
+
+      </div>
+      <!-- /main -->
+
+      <!-- sidebar -->
+      <div id="sidebar">
+        <div class="overview-que home-side1">
+          <h2>让每一个问题都被解决</h2>
+          <ul>
+            <li>
+                <span>问题总数:</span>
+                <strong class="color-red">{{ askProportion.recordcount}}</strong>
+            </li>
+            <li>
+                <span>已解决:</span>
+                <strong class="color-green">{{askProportion.reply }}</strong>
+                <em>{{askProportion.percentage }}%</em>
+            </li>
+
+            <li>
+                <span>待回复:</span>
+                <strong class="color-green">{{askProportion.noreply }} </strong>
+                <em>{{askProportion.nopercentage }}%</em>
+            </li>
+          </ul>
+        </div>
+
+        <!-- aside -->
+        <aside id="aside">
+          <div class="hot-que home-side3">
+            <h2>热门问答</h2>
+                {% include 'blog/question_answer.html' %} 
+          </div>
+        </aside>
+
+        
+      </div><!-- / sidebar-->
+    </div><!-- /class="wrap aside-right"-->
+  </div>
+</div>
+
+<div style="margin-left:300px;">
+    {% include 'blog/djangopage.html' %}
+</div>
+      
+<!--编辑器插件-->
+<link rel="stylesheet" href="/static/blog/ask/css/simditor.css"/>
+<script src="/static/blog/ask/js/module.js"></script>
+<script src="/static/blog/ask/js/hotkeys.js"></script>
+
+<script src="/static/blog/ask/js/simditor.js"></script>
+<script src="/static/blog/ask/js/editor1.js"></script><!--可以更改编辑器提示信息-->
+<script src="/static/blog/ask/js/ques.common.js"></script>
+<!--end 编辑器插件-->
+
+
+
+{% endblock %}
+
+

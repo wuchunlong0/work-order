@@ -1,0 +1,13 @@
+/* 顶部水平导航栏 鼠标划过 颜色设置 */
+.navbar-nav a:hover { 
+     background: #3ACC3A !important ;
+}
+.navbar-nav a:focus { 
+     background: #3ACC3A !important ;
+}
+.dropdown a:hover { 
+     background: #3ACC3A !important ;
+}
+.dropdown a:focus { 
+    background: #3ACC3A !important ;
+}

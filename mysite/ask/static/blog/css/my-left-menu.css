@@ -1,0 +1,33 @@
+/*.design {
+    width: 180px;
+    word-wrap:break-word;  
+}
+.design a {
+    line-height: 20px;
+    background-color: #f6f4f0;
+    text-decoration: none;
+    display: block;
+    padding: 4px;
+    border-bottom: 1px solid#efefef;
+    color: #000;
+}
+.design a:hover {
+    background-color: #96b97d;
+}*/
+
+.mydesign {
+    width: 180px;
+    word-wrap:break-word;  
+}
+.mydesign a {
+    line-height: 20px;
+    background-color: #f6f4f0;
+    text-decoration: none;
+    display: block;
+    padding: 4px;
+    border-bottom: 1px solid#efefef;
+    color: #000;
+}
+.mydesign a:hover {
+    background-color: #96b97d;
+}

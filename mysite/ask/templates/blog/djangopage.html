@@ -1,0 +1,17 @@
+<link href="/static/blog/home/css/abtn.css" rel="stylesheet">
+{% if num_pages > 1 %}
+    <p>
+        {% for i in pageList %}
+            {% if i == '...' %}
+                <span>{{ i }}</span>
+            {% else %}
+                {% if i == page %}
+                    <a href="{{ i }}{{ queryString }}" class="btn btn-primary">{{ i }}</a>
+                {% else %}
+                    <a href="{{ i }}{{ queryString }}" class="btn btn-default">{{ i }}</a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+<br>

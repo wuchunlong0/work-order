@@ -1,0 +1,73 @@
+
+.myrow {
+	width:100%;
+	max-width:1200px;
+	min-width:755px;
+	margin:0 auto;
+	overflow:hidden
+}
+.mycol,.eightcol,.elevencol,.fifteencol,.fivecol,.fourcol,.fourteencol,.ninecol,.onecol,.sevencol,.sixcol,.tencol,.thirteencol,.threecol,.twelvecol,.twocol {
+	margin-right:1%;
+	float:left
+}
+
+
+.mymiddle-column-home {
+	margin-top:15px;
+	width:80%;
+	margin-left: 26px;
+	padding:12px 20px;
+	border:1px solid #eaeaea;
+	background-color:#fff;
+	border-radius:4px
+}
+
+.mycodelist {
+	overflow:hidden
+}
+.mycodelist-mobile {
+	display:none
+}
+.mycodelist a {
+	width:72px;
+	margin:0 5px 8px 5px;
+	float:left;
+	text-align:center;
+	color:#999;
+	font-size:12px;
+	height:65px;
+	overflow:hidden;
+	text-decoration:none
+}
+.mycodelist a:hover {
+	color:#64854c
+}
+.mycodelist .mycodeicon {
+	border-radius:5px;
+	margin:0 auto;
+	display:block;
+	margin-bottom:5px
+}
+.mycodelist a.myitem-top {
+	width:24%;
+	margin:0 8px 10px 0;
+	text-align:left;
+	height:80px;
+	color:#bbb;
+	background-color:#f6f6f6;
+	border-radius:5px;
+	padding:6px 16px
+}
+.mycodelist a.myitem-top .mycodeicon {
+	float:left;
+	margin-left:10px;
+	margin-right:10px
+}
+.mycodelist a.myitem-top h4 {
+	color:#64854c;
+	font-size:16px;
+	margin-top:10px;
+	margin-bottom:10px;
+	line-height:1.1;
+	text-align:left
+}

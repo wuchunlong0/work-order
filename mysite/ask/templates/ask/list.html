@@ -1,0 +1,48 @@
+{% extends 'home/__base__.html' %}
+{% block content %}
+
+  <script src="/static/blog/home/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/static/blog/ask/css/common.min.css" >
+  <link rel="stylesheet" href="/static/blog/ask/css/common.css" >
+  <link rel="stylesheet" href="/static/blog/ask/css/ques.css">
+    
+<div class="wrapper">
+  <div id="container">
+    <div class="wrap aside-right">
+      <!-- main -->
+      <div id="main">
+
+        
+        <!-- queslist -->
+        <div class="asklist">
+
+          {% for TechnologyAsk in ask_list %}
+
+          <p>{{TechnologyAsk.edit|safe }}</p>
+              {{user.username}} <!--登录用户名-->
+                {{ TechnologyAsk.date|date:"Y-m-d H:i:s"}} <br> 
+          ------------------------------------------------
+          <!-- <hr></hr> --> <!-- 一条横线 -->
+
+          {% endfor %}
+        </div> <!-- /queslist -->
+
+      </div>
+      <!-- /main -->
+
+
+
+        
+      </div><!-- / sidebar-->
+    </div><!-- /class="wrap aside-right"-->
+  </div>
+</div>
+
+<div style="margin-left:300px;">
+    {% include 'blog/djangopage.html' %}
+</div>
+      
+
+{% endblock %}
+
+
